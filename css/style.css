@@ -6,7 +6,7 @@
 
 body {
   background-image: url("https://cdn.pixabay.com/photo/2015/07/02/10/13/sky-828648__340.jpg");
-  background-size: auto 100vh;
+  background-size: 100vw 100vh;
   font-family: Arial;
   height: 100vh;
   font-size: 12px;
@@ -44,6 +44,7 @@ header {
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: 1;
 }
 
 a {
@@ -64,16 +65,28 @@ a {
   color: teal;
   display: block;
   padding: 20px;
+  transition: color 0.3s, border-bottom 0.3s;
 }
 
+.menu a:active,
 .menu a:hover {
+  color: aqua;
   border-bottom: solid 5px aqua;
 }
 
-.site-subtitle,
-.site-title {
+.titles {
   text-align: center;
-  color: whitesmoke;
+  transform: scale(0.5) translateY(50vh);
+  opacity: 0;
+
+  animation: linear 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo {
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
 }
 
 .site-title {
@@ -89,11 +102,13 @@ a {
   line-height: 1.8em;
 }
 
+.contato,
 .portfolio {
   padding: 2em;
-  height: calc(100vh - 66px);
+  min-height: calc(100vh - 66px);
 }
 
+.contato,
 .portfolio h2 {
   font-family: 'Courgette', cursive;
   margin-bottom: 1.5em;
@@ -127,4 +142,22 @@ a {
   object-fit: cover;
   object-position: center;
   border-radius: 5px;
+  transition: transform 0.5s;
+}
+
+.img-portfolio:hover {
+  transform: scale(1.1);
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  font-size: 3em;
+  transition: text-shadow 0.8s;
+}
+
+.contato a:hover {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
 }
