@@ -1,3 +1,3 @@
-# my portfolio
+# imersao-css
 
-Personal Website
+CSS base to build my personal website made at alura's "imersao css".
