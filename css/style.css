@@ -1,21 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-image: url("http://www.vanessametonini.com.br/imersaocss/a1/img/fundo.jpg");
-  font-family: Arial;
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/02/10/13/sky-828648__340.jpg");
   background-size: auto 100vh;
-  height: 100vh
+  font-family: Arial;
+  height: 100vh;
+  font-size: 12px;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+}
+
+@media(min-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media(min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media(min-width: 880px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu {
-  background-color: #FFF;
+  background-color: wheat;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
 
 a {
   text-decoration: none;
-  color: teal;
-}
-
-a:hover {
-  text-decoration: underline;
+  color: #FFF;
 }
 
 .menu ul {
@@ -27,12 +60,71 @@ a:hover {
   list-style: none;
 }
 
+.menu a {
+  color: teal;
+  display: block;
+  padding: 20px;
+}
+
+.menu a:hover {
+  border-bottom: solid 5px aqua;
+}
+
 .site-subtitle,
 .site-title {
   text-align: center;
   color: whitesmoke;
 }
 
+.site-title {
+  font-size: 4em;
+  color: red;
+  font-family: 'Nosifer', cursive;
+}
+
 .site-subtitle {
+  color: orangered;
   font-style: italic;
+  font-family: 'Courgette', cursive;
+  line-height: 1.8em;
+}
+
+.portfolio {
+  padding: 2em;
+  height: calc(100vh - 66px);
+}
+
+.portfolio h2 {
+  font-family: 'Courgette', cursive;
+  margin-bottom: 1.5em;
+  font-size: 2em;
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 2em;
+  text-align: center;
+}
+
+@media(min-width: 580px){
+  .portfolio .grid {
+    grid-template-columns: repeat(2, 240px);
+    justify-content: space-around;
+  }
+}
+
+@media(min-width: 880px){
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+.img-portfolio {
+  width: 240px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
 }
